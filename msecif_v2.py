@@ -143,7 +143,7 @@ def GetAtomType(atom):
 # This function takes an atom in a molecule and returns its type as defined for ECIF
     
     AtomType = [atom.GetSymbol(),
-                str(atom.GetExplicitValence()),
+                str(atom.GetValence(Chem.rdchem.ValenceType.EXPLICIT)),
                 str(len([x.GetSymbol() for x in atom.GetNeighbors() if x.GetSymbol() != "H"])),
                 str(len([x.GetSymbol() for x in atom.GetNeighbors() if x.GetSymbol() == "H"])),
                 # str(int(atom.GetIsAromatic())),
